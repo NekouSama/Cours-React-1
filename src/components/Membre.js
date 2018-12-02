@@ -4,7 +4,12 @@ const Membre = (props) => {
     const nom = props.nom
     const age = props.age
     return (
-        <h2>Membre : {nom} à {age} ans</h2>
+        <h2 style={{
+            backgroundColor: age > 20 ? 'purple' : 'orange',
+            color: 'white'
+        }}>
+            Membre : {nom} a {age} ans
+        </h2>
     )
 }
 

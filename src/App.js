@@ -7,7 +7,7 @@ import Button from './components/Button';
 const famille = {
   membre1: {
     nom: 'Jérôme',
-    age: 27
+    age: 17
   },
   membre2: {
     nom: 'Neker',
@@ -27,7 +27,7 @@ const famille = {
   }
 }
 
-const num = 9
+const num = 2
 
 class App extends Component {
   state = {
@@ -38,6 +38,12 @@ class App extends Component {
     famille.membre1.age += num
     this.setState({ famille })
   }
+  handleChange = event => {
+    const famille = { ...this.state.famille }
+    const nom = event.target.value
+    famille.membre1.nom = nom
+    this.setState({ famille })
+  }
   render() {
     const { titre } = this.props
     const { famille } = this.state
@@ -45,7 +51,7 @@ class App extends Component {
       <Fragment>
         <div className="App">
           <h1>{titre}</h1>
-          <input type='text' />
+          <input value={famille.membre1.nom} onChange={this.handleChange} type='text' />
           <Membre nom={famille.membre1.nom} age={famille.membre1.age} />
           <Membre nom={famille.membre2.nom} age={famille.membre2.age} />
           <Membre nom={famille.membre3.nom} age={famille.membre3.age} />

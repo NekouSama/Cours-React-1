@@ -1,0 +1,13 @@
+button{
+    background-color: #bada55;
+    height: 50px;
+    padding: 0 20px;
+    font-size: 25px;
+    color: white;
+    /*box-shadow: gray 1px 1px;*/
+    border-radius: 10px 10px;
+    line-height: 1;
+}
+button:hover{
+    background-color: green;
+}
